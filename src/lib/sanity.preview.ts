@@ -1,7 +1,11 @@
 import {definePreview} from 'next-sanity/preview'
-import { projectId, dataset } from "./sanity.varibles";
+import { dataset } from "./sanity.varibles";
+
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 
 function onPublicAccessOnly() {
-  throw new Error(`Unable to load preview as you're not logged in`, projectId)
+  throw new Error(`Unable to load preview as you're not logged in`)
 }
+
+
 export const usePreview = definePreview({projectId, dataset, onPublicAccessOnly})
