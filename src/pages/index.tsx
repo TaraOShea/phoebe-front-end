@@ -63,7 +63,7 @@ export default function Home({
   // The fetch happens inside PreviewPosts
   return preview ? (
     <PreviewSuspense fallback="Loading...">
-      <PreviewPosts posts={data.posts} />
+      <PreviewPosts posts={data} />
     </PreviewSuspense>
   ) : (
     <>
