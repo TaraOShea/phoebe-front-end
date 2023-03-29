@@ -1,0 +1,169 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+/* prettier-ignore */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+/* prettier-ignore */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+ display: block;
+}
+body {
+line-height: 1;
+}
+ol,
+ul {
+list-style: none;
+}
+blockquote,
+q {
+quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+content: "";
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    color: #000;
+    font-family: "stratos", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: transparent;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+/**
+****************
+* END CSS RESET
+****************
+**/
+
+html, body {
+    min-width: 100%;
+    min-height: 100%;
+    font-family: "stratos", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+#logo {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15vh;
+}
+
+#logo svg {
+    width: 70vw;
+    fill: #000;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    text-transform: uppercase;
+}
+
+.header li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.content {
+    position: relative;
+    
+}
+.content .slides .slide {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.content .slides .slide:last-child {
+    padding-bottom: 0vh;
+}
+.content .slides .slide .slide-content {
+    height: 73vh;
+    width: 73vw;
+}
+.content .slides .slide .slide-content img, 
+.content .slides .slide .slide-content video {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+}
+
+.content .description {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+}
