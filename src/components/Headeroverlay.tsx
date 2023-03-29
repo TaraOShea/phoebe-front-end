@@ -3,9 +3,9 @@ import React from "react";
 import Link from "next/link";
 import { SanityDocument } from "@sanity/client";
 
-function Header({ categories }: { categories: SanityDocument[] }) {
+function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
  return (
-   <header className="header">
+    <div className="headeroverlay">
         <div className="headerflex">
           <div>Main Feed</div>
           <ul>
@@ -19,9 +19,8 @@ function Header({ categories }: { categories: SanityDocument[] }) {
           </ul>
           <button>Information</button>
         </div>
-
-   </header>
+    </div>
  );
 }
 
-export default Header;
+export default Headeroverlay;

@@ -4,6 +4,7 @@ import type { SanityDocument } from "@sanity/client";
 import Head from "next/head";
 import { client } from "../lib/sanity.client";
 import Header from '../components/Header'
+import Headeroverlay from '../components/Headeroverlay'
 import Logo from "@/components/Logo";
 import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
@@ -80,6 +81,7 @@ export default function Home({
     <div className="container">
       <Logo />
       <Header categories={cats} />
+      <Headeroverlay categories={cats} />
       <Posts posts={posts} />
     </div>
     </>
