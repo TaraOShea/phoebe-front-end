@@ -47,23 +47,30 @@ export const getStaticProps = async ({ preview = false }) => {
     },
   }
   `);
-  return { props: { preview, data } };
+
+  var posts = data.posts;
+  var cats = data.categories;
+  return { props: { preview, data, posts, cats } };
   
 };
 
 export default function Home({
   preview,
   data,
+  posts,
+  cats,
 }: {
   preview: Boolean;
   data: SanityDocument[];
+  posts: SanityDocument[];
+  cats: SanityDocument[];
 }) {
 
   // PreviewSuspense shows while data is being fetched
   // The fetch happens inside PreviewPosts
   return preview ? (
     <PreviewSuspense fallback="Loading...">
-      <PreviewPosts posts={data} />
+      <PreviewPosts query={query} />
     </PreviewSuspense>
   ) : (
     <>
@@ -72,8 +79,8 @@ export default function Home({
       </Head>
     <div className="container">
       <Logo />
-      <Header categories={data.categories} />
-      <Posts posts={data.posts} />
+      <Header categories={cats} />
+      <Posts posts={posts} />
     </div>
     </>
   );

@@ -9,13 +9,13 @@ function Header({ categories }: { categories: SanityDocument[] }) {
    <header className="header">
         <div>Main Feed</div>
         <ul>
-        {categories.map((category) => (  
+        {/* {categories.map((category) => (  
             <li key={category._id}>
                  <Link href={category.slug.current} >
                     {category.name}
                 </Link>
             </li>
-        ))}
+        ))} */}
         </ul>
         <button>Information</button>
    </header>
