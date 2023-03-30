@@ -3,6 +3,7 @@ import { groq } from "next-sanity";
 import type { SanityDocument } from "@sanity/client";
 import Head from "next/head";
 import { client } from "../lib/sanity.client";
+import Intro from '../components/Intro'
 import Header from '../components/Header'
 import Headeroverlay from '../components/Headeroverlay'
 import Logo from "@/components/Logo";
@@ -46,25 +47,34 @@ export const getStaticProps = async ({ preview = false }) => {
       name, 
       slug,
     },
+    'intro': *[_type == "page" && slug.current == 'intro']{
+      _id,
+      name, 
+      slug,
+      video {
+        asset->
+      }
+    },
   }
   `);
 
   var posts = data.posts;
   var cats = data.categories;
-  return { props: { preview, data, posts, cats } };
+  var intro = data.intro;
+  return { props: { preview, posts, cats, intro } };
   
 };
 
 export default function Home({
   preview,
-  data,
   posts,
   cats,
+  intro
 }: {
   preview: Boolean;
-  data: SanityDocument[];
   posts: SanityDocument[];
   cats: SanityDocument[];
+  intro: SanityDocument[];
 }) {
 
   // PreviewSuspense shows while data is being fetched
@@ -82,6 +92,7 @@ export default function Home({
       <Logo />
       <Header categories={cats} />
       <Headeroverlay categories={cats} />
+      <Intro intro={intro}/>
       <Posts posts={posts} />
     </div>
     </>

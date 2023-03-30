@@ -51,6 +51,7 @@ button {
     color: #000;
     font-family: "stratos", sans-serif;
     font-size: 12px;
+    line-height: 1;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, 
@@ -65,12 +66,15 @@ button:focus {
 }
 
 button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
+    outline: 0px solid #fff;
+    outline-offset: 0px;
 }
 
 button:active {
     transform: scale(0.99);
+}
+.pointer {
+    cursor: pointer;
 }
 /**
 ****************
@@ -92,7 +96,36 @@ a {
     text-decoration: none;
 }
 
-#logo {
+.overflow-hidden  {
+    overflow: hidden;
+}
+#intro.hidden, #enterbtn.hidden {
+    display: none;
+}
+#intro {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+}
+#enterbtn {
+    position: fixed;
+    z-index: 500;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+}
+#intro #enterbtnhidden {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 72vw;
+    height: 0;
+    padding-bottom: 35%;
+}
+#logo, #intrologo  {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -105,14 +138,28 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 15vh;
+
+
+    opacity: 1;
+    transition: opacity .35s ease-in-out;
+    -moz-transition: opacity .35s ease-in-out;
+    -webkit-transition: opacity .35s ease-in-out;
 }
 
 #logo svg {
-    width: 70vw;
+    width: 72vw;
     fill: #000;
 }
-
+#intrologo svg {
+    width: 72vw;
+    fill: #FFF;  
+}
+#intrologo.faded {
+    opacity: 0;
+}
+.overflow-hidden .header{
+    display: none;
+}
 .header {
     position: fixed;
     top: 0;
@@ -144,12 +191,14 @@ a {
 
     opacity: 0;
 }
-
-.content {
-    position: relative;
-    
+.overflow-hidden #content {
+    display: none;
 }
-.content .slides .slide {
+#content {
+    position: relative; 
+    display: block;
+}
+#content .slides .slide {
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -159,18 +208,18 @@ a {
     align-items: center;
     z-index: 1000;
 }
-.content .slides .slide:last-child {
+#content .slides .slide:last-child {
     padding-bottom: 0vh;
 }
-.content .slides .slide .slide-content {
+#content .slides .slide .slide-content {
     height: 73vh;
     width: 73vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.content .slides .slide .slide-content img, 
-.content .slides .slide .slide-content video {
+#content .slides .slide .slide-content img, 
+#content .slides .slide .slide-content video {
     display: block;
     height: auto;
     margin: 0 auto;
@@ -178,10 +227,13 @@ a {
     max-width: 100%;
     width: auto;
 }
-
-.content .description {
+.overflow-hidden #content .description {
+    display: none;
+}
+#content .description {
     position: fixed;
     bottom: 30px;
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
 }

@@ -6,9 +6,8 @@ import { client } from "../lib/sanity.client";
 const builder = imageUrlBuilder(client);
 
 export default function Posts({ posts }: { posts: SanityDocument[] }) {
-  console.log(posts)
   return (
-      <div className="content">
+      <div id="content">
         <div className="slides">
         {posts.map((post) => (
           <div className="slide" key={post._id}>

@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="stylesheet" href="https://use.typekit.net/log4hvx.css" />
       </Head>
-      <body>
+      <body className='overflow-hidden'>
         <Main />
         <NextScript />
       </body>

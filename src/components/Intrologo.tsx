@@ -1,7 +1,7 @@
 
-export default function Logo() {
+export default function IntroLogo() {
  return (
-   <div id="logo">
+   <div id="intrologo">
         <svg width="1159" height="483" viewBox="0 0 1159 483" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M212.646 104.8H232.646C269.446 104.8 292.046 87.2 292.046 53.6C292.046 20 269.446 2.39999 232.646 2.39999H167.246V146H212.646V104.8ZM212.646 67.2V40H230.246C242.046 40 247.246 45.4 247.246 53.6C247.246 61.8 242.046 67.2 230.246 67.2H212.646Z" />
             <path d="M388.64 2.39999V54.6H346.24V2.39999H300.84V146H346.24V92.6H388.64V146H434.04V2.39999H388.64Z" />
