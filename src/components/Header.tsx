@@ -1,11 +1,11 @@
 
-import React from "react";
 import Link from "next/link";
 import { SanityDocument } from "@sanity/client";
 
 function Header({ categories }: { categories: SanityDocument[] }) {
+
  return (
-   <header className="header">
+   <header id="header" className="hide">
         <div className="headerflex">
           <div>Main Feed</div>
           <ul>

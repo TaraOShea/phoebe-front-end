@@ -10,8 +10,15 @@ export default function Intro({ intro }: { intro: SanityDocument[] }) {
     document.getElementById("intrologo")?.classList.add("faded");
     document.getElementById("enterbtn")?.classList.add("hidden");
     document.getElementById("content")?.scrollIntoView({ behavior: 'smooth' });
+    
+    document.getElementById("header")?.classList.remove("hide");
+    document.getElementById("header")?.classList.add('show');
+    document.getElementById("description")?.classList.remove("hide");
+    document.getElementById("description")?.classList.add('show');
+    
     setTimeout(() =>{
-        document.getElementById("intro")?.classList.add("hidden");
+        // document.getElementById("intro")?.classList.add("hidden");
+        document.getElementById("intro")?.remove()
     }, 1000);
   }
 

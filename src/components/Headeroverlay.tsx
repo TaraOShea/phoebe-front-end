@@ -1,9 +1,18 @@
 
-import React from "react";
+import React, { MouseEvent } from 'react';
 import Link from "next/link";
 import { SanityDocument } from "@sanity/client";
 
 function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
+    const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        document.getElementById("information")?.classList.add("show");
+
+        setTimeout(() =>{
+            document.getElementById("information")?.classList.add("fadein");
+        }, 200);
+    }
+
  return (
     <div className="headeroverlay">
         <div className="headerflex">
@@ -17,7 +26,7 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
               </li>
           ))}
           </ul>
-          <button>Information</button>
+          <button onClick={handleMouseEvent}>Information</button>
         </div>
     </div>
  );

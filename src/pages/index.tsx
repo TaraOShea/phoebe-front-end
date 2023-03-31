@@ -9,6 +9,7 @@ import Headeroverlay from '../components/Headeroverlay'
 import Logo from "@/components/Logo";
 import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
+import Information from "@/components/Information";
 
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
 const query = groq`*[_type == "post" && defined(slug.current)]{
@@ -55,13 +56,24 @@ export const getStaticProps = async ({ preview = false }) => {
         asset->
       }
     },
+    'info': *[_type == "page" && slug.current == 'information']{
+      _id,
+      name, 
+      slug,
+      overview,
+      video {
+        asset->
+      }
+    },
   }
   `);
 
   var posts = data.posts;
   var cats = data.categories;
   var intro = data.intro;
-  return { props: { preview, posts, cats, intro } };
+  var info = data.info;
+
+  return { props: { preview, posts, cats, intro, info } };
   
 };
 
@@ -69,12 +81,14 @@ export default function Home({
   preview,
   posts,
   cats,
-  intro
+  intro,
+  info
 }: {
   preview: Boolean;
   posts: SanityDocument[];
   cats: SanityDocument[];
   intro: SanityDocument[];
+  info: SanityDocument[]; 
 }) {
 
   // PreviewSuspense shows while data is being fetched
@@ -94,6 +108,7 @@ export default function Home({
       <Headeroverlay categories={cats} />
       <Intro intro={intro}/>
       <Posts posts={posts} />
+      <Information info={info}/>
     </div>
     </>
   );

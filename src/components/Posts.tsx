@@ -23,7 +23,7 @@ export default function Posts({ posts }: { posts: SanityDocument[] }) {
           </div>
         ))}
         </div>
-        <div className="description">desc to go here</div>
+        <div id="description" className="hide">desc to go here</div>
       </div>
   );
 }
