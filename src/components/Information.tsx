@@ -18,7 +18,7 @@ export default function Information({ info }: { info: SanityDocument[] }) {
 
    React.useEffect(() => {
       if (video.current) {
-        console.log(`hookRef div width: ${video.current.clientWidth}`);
+        console.log(`${video.current}`);
       }
     }, []);
 
