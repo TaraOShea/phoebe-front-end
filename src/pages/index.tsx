@@ -1,3 +1,5 @@
+'use client';
+
 import { lazy } from "react";
 import { groq } from "next-sanity";
 import type { SanityDocument } from "@sanity/client";
@@ -10,8 +12,6 @@ import Logo from "@/components/Logo";
 import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
-
-'use client';
 
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
 const query = groq`*[_type == "post" && defined(slug.current)]{

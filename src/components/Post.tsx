@@ -13,10 +13,17 @@ export default function Post({ description, poster, title }: { description: Sani
     threshold: 0.4,
   });
 
+  const handleMouseEvent = (inView: any, description: any) => {
+    let myContainer = document.getElementById('description') as HTMLInputElement;
+    console.log(myContainer, description)
+    inView == true ? 
+      myContainer.innerHTML = description 
+    : null;
+  }
 
   return (
     <div className="slide" ref={ref}>
-        <InView as="div" className="slide-content" onChange={(inView, entry) => console.log('Inview:', inView, entry)}>
+        <InView as="div" className="slide-content" onChange={(inView, entry) => handleMouseEvent(inView, description)} data-desc={description}>
             <Image
               src={builder.image(poster).width(1200).url()}
               width={1000}
