@@ -33,7 +33,7 @@ export const getStaticProps = async ({ preview = false }) => {
 
   // const data = await client.fetch(query);
 
-  var data = await client.fetch(`
+  var data = await client.fetch(groq`
   {
     'posts': *[_type == "post" && defined(slug.current)]{
       _id,
