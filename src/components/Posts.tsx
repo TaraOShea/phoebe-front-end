@@ -10,6 +10,7 @@ export default function Posts({ posts }: { posts: SanityDocument[] }) {
         {posts.map((post) => (
             <Post 
               key={post._id} 
+              title={post.title}
               description={post.description}
               poster={post.poster}
             />
