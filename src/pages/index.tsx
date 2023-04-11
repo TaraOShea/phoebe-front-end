@@ -11,6 +11,8 @@ import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
 
+'use client';
+
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
 const query = groq`*[_type == "post" && defined(slug.current)]{
   _id,
