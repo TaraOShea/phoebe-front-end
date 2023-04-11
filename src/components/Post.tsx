@@ -15,7 +15,6 @@ export default function Post({ description, poster, title }: { description: Sani
 
   const handleMouseEvent = (inView: any, description: any) => {
     let myContainer = document.getElementById('description') as HTMLInputElement;
-    console.log(myContainer, description)
     inView == true ? 
       myContainer.innerHTML = description 
     : null;
