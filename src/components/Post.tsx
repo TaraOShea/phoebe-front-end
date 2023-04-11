@@ -23,7 +23,6 @@ export default function Post({ description, poster, title }: { description: Sani
               height={1000}
               alt={"title"}
             />
-           <h2>{`Header inside viewport ${inView}.`}</h2>
         </InView>
     </div>
   );
