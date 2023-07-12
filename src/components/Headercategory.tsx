@@ -5,7 +5,7 @@ import { SanityDocument } from "@sanity/client";
 function Header({ categories }: { categories: SanityDocument[] }) {
 
  return (
-   <header id="header" className="hide">
+   <header id="header">
         <div className="headerflex">
         <Link href="/">Main Feed</Link>
           <ul>

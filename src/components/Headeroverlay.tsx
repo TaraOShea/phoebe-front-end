@@ -16,7 +16,7 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
  return (
     <div className="headeroverlay">
         <div className="headerflex">
-          <div>Main Feed</div>
+        <Link href="/">Main Feed</Link>
           <ul>
           {categories.map((category) => (  
               <li key={category._id}>
