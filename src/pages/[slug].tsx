@@ -28,21 +28,27 @@ const query = groq`*[_type == "post" && defined(slug.current)]{
 
 
   
-
-
-
-export const getStaticPaths = async () => {
-    const data = await client.fetch(groq`*[_type == "post" && defined(slug.current)]{
-      slug
-    }`);
-  
-    const paths = data.map((post) => ({ params: { slug: post.slug.current } }));
-  
-    return {
-      paths,
-      fallback: 'blocking'
-    };
+interface Post {
+  slug: {
+    current: string;
   };
+  // Other properties of the Post object
+}
+
+
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const data: Post[] = await client.fetch(groq`*[_type == "post" && defined(slug.current)]{
+    slug
+  }`);
+
+  const paths = data.map((post: Post) => ({ params: { slug: post.slug.current } }));
+
+  return {
+    paths,
+    fallback: 'blocking'
+  };
+};
 
 export const getStaticProps = async ({ preview = false, params }) => {
     if (preview) {
