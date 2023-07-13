@@ -13,6 +13,7 @@ import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
 import { GetStaticPaths } from 'next';
+import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router'
 
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
@@ -54,15 +55,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps = async ({ preview = false, params }) => {
-    if (preview) {
-      return { props: { preview } };
-    }
+export const getStaticProps: GetStaticProps = async ({ preview = false, params }) => {
+  if (preview) {
+    return { props: { preview } };
+  }
 
 
 
   // Extract the slug from the router object
-  const { slug } = params;
+  const { slug } = params as { slug: string }; 
 
   var data = await client.fetch(groq`
   {
