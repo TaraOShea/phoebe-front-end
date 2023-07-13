@@ -9,7 +9,7 @@ import Intro from '../components/Introcategory'
 import Header from '../components/Headercategory'
 import Headeroverlay from '../components/Headeroverlay'
 import Logo from "@/components/Logo";
-import Posts from "../components/Postscategory";
+import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
 import { GetStaticPaths } from 'next';
@@ -37,10 +37,6 @@ interface Post {
   };
   // Other properties of the Post object
 }
-
-
-
-
 
 
 // export const getStaticPaths: GetStaticPaths = async () => {
