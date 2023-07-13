@@ -26,7 +26,7 @@ const query = groq`*[_type == "post" && defined(slug.current)]{
 }`;
 
 
-export const getStaticProps = async ({ preview = false }) => {
+export const getServerSideProps = async ({ preview = false }) => {
   if (preview) {
     return { props: { preview } };
   }
