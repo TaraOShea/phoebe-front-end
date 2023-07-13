@@ -37,6 +37,9 @@ interface Post {
 
 
 
+
+
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const data: Post[] = await client.fetch(groq`*[_type == "post" && defined(slug.current)]{
     slug
