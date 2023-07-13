@@ -12,6 +12,7 @@ import Logo from "@/components/Logo";
 import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
+import { GetStaticPaths } from 'next';
 import { useRouter } from 'next/router'
 
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
