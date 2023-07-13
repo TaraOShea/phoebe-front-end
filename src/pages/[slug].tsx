@@ -9,7 +9,7 @@ import Intro from '../components/Introcategory'
 import Header from '../components/Headercategory'
 import Headeroverlay from '../components/Headeroverlay'
 import Logo from "@/components/Logo";
-import Posts from "../components/Posts";
+import Posts from "../components/Postscategory";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
 import { GetStaticPaths } from 'next';
