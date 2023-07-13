@@ -13,7 +13,8 @@ import Posts from "../components/Posts";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
 import { GetStaticPaths } from 'next';
-import { GetStaticProps } from 'next';
+// import { GetStaticProps } from 'next';
+import { GetServerSideProps } from "next";
 import { useRouter } from 'next/router'
 
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
@@ -42,24 +43,29 @@ interface Post {
 
 
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const data: Post[] = await client.fetch(groq`*[_type == "post" && defined(slug.current)]{
-    slug
-  }`);
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const data: Post[] = await client.fetch(groq`*[_type == "post" && defined(slug.current)]{
+//     slug
+//   }`);
 
-  const paths = data.map((post: Post) => ({ params: { slug: post.slug.current } }));
+//   const paths = data.map((post: Post) => ({ params: { slug: post.slug.current } }));
 
-  return {
-    paths,
-    fallback: 'blocking'
-  };
-};
+//   return {
+//     paths,
+//     fallback: 'blocking'
+//   };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ preview = false, params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ preview = false, params }) => {
   if (preview) {
     return { props: { preview } };
   }
+  
+  const datapost: Post[] = await client.fetch(groq`*[_type == "post" && defined(slug.current)]{
+    slug
+  }`);
 
+  const paths = datapost.map((post: Post) => ({ params: { slug: post.slug.current } }));
 
 
   // Extract the slug from the router object
@@ -111,7 +117,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false, params }
   var intro = data.intro;
   var info = data.info;
 
-  return { props: { preview, posts, cats, intro, info } };
+  return {props: { paths, fallback: 'blocking', preview, posts, cats, intro, info } };
   
 };
 
