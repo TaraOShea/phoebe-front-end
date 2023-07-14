@@ -254,6 +254,9 @@ a {
     text-align: center;
     text-transform: uppercase;
 }
+#description-mobile {
+    display: none;
+}
 
 
 #description.hide {
@@ -355,4 +358,33 @@ a {
 
 .active a {
 border-bottom: 1px solid;
+}
+
+@media only screen and (max-width: 640px) {
+    #content .slides .slide {
+        height: 70vh;
+        width: 60vw;
+        padding: 15vh 20vw;
+    }
+    #content .slides .slide .slide-content {
+        flex-wrap: wrap;
+        height: auto;
+        width: auto;
+    }
+    #description {
+        display: none;
+    }
+    #description-mobile {
+        display: block;
+        margin-top: 12px;
+    }
+    .headerflex ul {
+        position: fixed;
+        bottom: 30px;
+        text-align: center;
+        width: calc(100% - 60px);
+    }
+    .headerflex li {
+        padding: 0 6px;
+    }
 }

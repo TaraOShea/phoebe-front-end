@@ -29,6 +29,7 @@ export default function Post({ description, poster, title }: { description: Sani
               height={1000}
               alt={"title"}
             />
+            <div id="description-mobile">{description}</div>
         </InView>
     </div>
   );
