@@ -6,7 +6,7 @@ function Header({ categories }: { categories: SanityDocument[] }) {
 
  return (
    <header id="header" className="hide">
-        <div className="headerflex">
+        <div className="headerflex twice">
         <Link href="/">Main Feed</Link>
           <ul>
           {categories.map((category) => (  
