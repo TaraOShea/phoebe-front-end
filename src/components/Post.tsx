@@ -4,6 +4,8 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../lib/sanity.client";
 import { useInView, InView } from 'react-intersection-observer';
+import { PortableText } from "@portabletext/react";
+
 
 const builder = imageUrlBuilder(client);
 
@@ -29,7 +31,7 @@ export default function Post({ description, poster, title }: { description: Sani
               height={1000}
               alt={"title"}
             />
-            <div id="description-mobile">{description}</div>
+            <div id="description-mobile"><PortableText  value={description} /></div>
         </InView>
     </div>
   );
