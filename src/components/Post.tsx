@@ -9,7 +9,7 @@ import { PortableText } from "@portabletext/react";
 
 const builder = imageUrlBuilder(client);
 
-export default function Post({ description, poster, title }: { description: SanityDocument[], poster: SanityDocument[], title: SanityDocument[] }) {
+export default function Post({ description, poster, title }: { description: string[], poster: SanityDocument[], title: any }) {
 
   const { ref, inView, entry } = useInView({
     threshold: 0.4,
@@ -29,9 +29,9 @@ export default function Post({ description, poster, title }: { description: Sani
               src={builder.image(poster).width(1200).url()}
               width={1000}
               height={1000}
-              alt={"title"}
+              alt={title}
             />
-            <div id="description-mobile"><PortableText  value={description} /></div>
+            <div id="description-mobile">{description}</div>
         </InView>
     </div>
   );
