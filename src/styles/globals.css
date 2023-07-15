@@ -363,13 +363,13 @@ border-bottom: 1px solid;
 @media only screen and (max-width: 640px) {
     #content .slides .slide {
         height: 70vh;
-        width: 70vw;
-        padding: 15vh 15vw;
+        width: 64vw;
+        padding: 15vh 18vw;
     }
     #content .slides .slide .slide-content {
         flex-wrap: wrap;
         height: auto;
-        width: auto;
+        width: 100%;
     }
     #description {
         display: none;
