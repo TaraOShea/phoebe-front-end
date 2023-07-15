@@ -363,8 +363,8 @@ border-bottom: 1px solid;
 @media only screen and (max-width: 640px) {
     #content .slides .slide {
         height: 70vh;
-        width: 60vw;
-        padding: 15vh 20vw;
+        width: 70vw;
+        padding: 15vh 15vw;
     }
     #content .slides .slide .slide-content {
         flex-wrap: wrap;
