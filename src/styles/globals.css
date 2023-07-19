@@ -231,6 +231,8 @@ a {
 #content .slides .slide .slide-content {
     height: 73vh;
     width: 73vw;
+    top: 13.5vh;
+    position: sticky;
     display: flex;
     justify-content: center;
     align-items: center;
