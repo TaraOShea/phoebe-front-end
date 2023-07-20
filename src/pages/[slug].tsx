@@ -23,6 +23,7 @@ const query = groq`*[_type == "post" && defined(slug.current)]{
   title, 
   slug,
   poster,
+  images,
   'post_category': post_category[]{
     ...,
     category_list->
@@ -74,6 +75,7 @@ export const getServerSideProps: GetServerSideProps = async ({ preview = false, 
         title,
         slug,
         poster,
+        images,
         description,
         'post_category': post_category[]{
           ...,

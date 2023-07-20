@@ -16,6 +16,7 @@ import Information from "@/components/Information";
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
 const query = groq`*[_type == "post" && defined(slug.current)]{
   _id,
+  images,
   title, 
   slug,
   poster,
@@ -39,6 +40,7 @@ export const getServerSideProps = async ({ preview = false }) => {
       _id,
       title, 
       slug,
+      images,
       poster,
       description,
       'post_category': post_category[]{

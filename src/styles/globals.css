@@ -125,7 +125,7 @@ a {
     height: 0;
     padding-bottom: 35%;
 }
-#logo, #intrologo  {
+#logo, #intrologo, #infologo  {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -150,9 +150,13 @@ a {
     width: 72vw;
     fill: #000;
 }
-#intrologo svg {
+#intrologo svg, #infologo svg{
     width: 72vw;
     fill: #FFF;  
+}
+
+#infologo svg{
+    filter: blur(40px);
 }
 #intrologo.faded {
     opacity: 0;
@@ -230,7 +234,7 @@ a {
 }
 #content .slides .slide .slide-content {
     height: 73vh;
-    width: 73vw;
+    width: 100vw;
     top: 13.5vh;
     position: sticky;
     display: flex;
@@ -275,6 +279,23 @@ a {
     transition: opacity .35s ease-in-out .5s;
     -moz-transition: opacity .35s ease-in-out .5s;
     -webkit-transition: opacity .35s ease-in-out .5s;
+}
+
+.marquee-container {
+    left: 0;
+    top:0;
+    background-color: #000;
+    display: block !important;
+    transform: rotate(45deg);
+    width: 100vw;
+    z-index: 100;
+    position: fixed !important;
+}
+
+.swiper-slide {
+    display: flex !important;
+    height: auto !important;
+    align-items: center !important;
 }
 
 
