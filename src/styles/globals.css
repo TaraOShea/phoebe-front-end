@@ -247,7 +247,7 @@ a {
     display: block;
     height: auto;
     margin: 0 auto;
-    max-height: 73%;
+    max-height: 73vh;
     max-width: 100%;
     width: auto;
 }
