@@ -38,7 +38,7 @@ export default function Post({ description, poster, images, title }: { descripti
   return (
     <div className="slide" ref={ref}>
       <InView as="div" className="slide-content" onChange={(inView, entry) => handleMouseEvent(inView, description)} data-desc={description}>
-        <Swiper {...swiperSettings}>
+        <Swiper grabCursor loop>
           {Array.isArray(poster) ? (
             poster.map((item, index) => (
               <SwiperSlide key={index}>
