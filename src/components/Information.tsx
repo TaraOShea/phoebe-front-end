@@ -26,9 +26,22 @@ export default function Information({ info }: { info: SanityDocument[] }) {
     console.log(info)
    return (
     <div id="information">
-            <Marquee>
-  I can be a React component, multiple React components, or just some text.
+      <div className="m-wrapper">
+            <Marquee autoFill direction="right">
+            <span className="serif">Clients include:</span>
+            <span className="bold">ROBERTA</span>
+            <span className="normal">EINER</span>
+            <span className="bold">ADIDAS</span>
+            <span className="normal">BYREDO</span>
+            <span className="bold">BROWNS</span>
+            <span className="normal">FARFETCH</span>
+            <span className="bold">ELLESSE</span>
+            <span className="normal">ED HARDY</span>
+            <span className="bold">MERCEDES</span>
+            <span className="normal">FLANNELS</span>
 </Marquee>
+</div>
+
          <video id="info-video" ref={video} autoPlay loop muted style={{ width: '100vw', height: '100vh', position: 'absolute', top: '0', right: '0', objectFit: 'cover' }}>
             <source src={info[0].video.asset.url} />
          </video>
@@ -41,6 +54,10 @@ export default function Information({ info }: { info: SanityDocument[] }) {
 <p>With over 15 years in the industry Phoebe started her career at numerous high fashion publications working alongside top industry names such as  Sarajane Hoare, Grace Coddington, Patrick Demarchelier,  Mario Testino and Annie Lebovitz.  At age 23 she was appointed Creative Director of Topshop-based East London label, Illustrated People. Over the 4 years Phoebe at the helm of brand she secured exclusive collaborations with Selfridges, Ed hardy and V Files, and talent such as Iris Law, Little Sims, Charli XCX.</p>
 <p>During her most recent styling work Phoebe has worked with celebrities including Hailey Bieber, Ciara, Amelia Grey, Pink Pantheress, Addison Rae, Beabadoobee, Gracie Abrams, Zara Larsson and Jesse Jo Stark.</p>
 <p>Phoebe worked closely with designers Roberta Einer and Susan Fang on their SS23 and FW23 collections,  she has always supported local young designers and artists throughout her career. Her most recent editorial styling work has been featured in The Greatest Magazine and Vogue Portugal.</p> */}
+        <div className="info-contact">
+         <span>contact</span>
+         <a href="mailto:email@gmail.com">Email@gmail</a>
+        </div>
          </div> 
          <button id="close-info" onClick={handleMouseEvent}>Close</button>
     </div>

@@ -49,7 +49,7 @@ button {
     text-transform: uppercase;
     background: transparent;
     color: #000;
-    font-family: "stratos", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 1;
     cursor: pointer;
@@ -85,8 +85,9 @@ button:active {
 html, body {
     min-width: 100%;
     min-height: 100%;
-    font-family: "stratos", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
+    letter-spacing: 0.2px;
     font-style: normal;
     font-size: 12px;
 }
@@ -246,7 +247,7 @@ a {
     display: block;
     height: auto;
     margin: 0 auto;
-    max-height: 100%;
+    max-height: 73%;
     max-width: 100%;
     width: auto;
 }
@@ -281,14 +282,18 @@ a {
     -webkit-transition: opacity .35s ease-in-out .5s;
 }
 
-.marquee-container {
-    left: 0;
-    top:0;
+.m-wrapper {
+    left: -20vw;
+    top: 0;
+    pointer-events: none;
+    position: fixed;
     background-color: #000;
     display: block !important;
-    transform: rotate(45deg);
-    width: 100vw;
+    transform: rotate(-11deg);
+    width: 200vw;
     z-index: 100;
+    color: #fff;
+    padding: 1rem;
     position: fixed !important;
 }
 
@@ -344,6 +349,42 @@ a {
     color: #FFF;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.bold, .normal, .serif {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.serif {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.info-contact {
+    position: fixed;
+    bottom: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info-contact a {
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #fff !important;
+}
+
 .info-content {
     position: relative;
     display: block;
@@ -371,7 +412,7 @@ a {
 }
 
 .info-content h2 {
-    font-family: "stratos", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-weight: 900;
     font-size: 22px;
@@ -410,5 +451,10 @@ border-bottom: 1px solid;
     }
     .headerflex li {
         padding: 0 6px;
+    }
+
+    .m-wrapper {
+        left: -50vw;
+        transform: rotate(-20deg);
     }
 }
