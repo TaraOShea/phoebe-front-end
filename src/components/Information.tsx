@@ -42,7 +42,7 @@ export default function Information({ info }: { info: SanityDocument[] }) {
 </Marquee>
 </div>
 
-         <video id="info-video" ref={video} autoPlay loop muted style={{ width: '100vw', height: '100vh', position: 'absolute', top: '0', right: '0', objectFit: 'cover' }}>
+         <video id="info-video" ref={video} autoPlay playsInline loop muted style={{ width: '100vw', height: '100vh', position: 'absolute', top: '0', right: '0', objectFit: 'cover' }}>
             <source src={info[0].video.asset.url} />
          </video>
          <div className="info-backdrop"></div>

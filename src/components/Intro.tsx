@@ -25,7 +25,7 @@ export default function Intro({ intro }: { intro: SanityDocument[] }) {
   
    return (
     <div id="intro">
-      <video autoPlay loop muted style={{ width: '100vw', height: '100vh', position: 'absolute', top: '0', right: '0', objectFit: 'cover' }}>
+      <video autoPlay loop muted playsInline style={{ width: '100vw', height: '100vh', position: 'absolute', top: '0', right: '0', objectFit: 'cover' }}>
         <source src={intro[0].video.asset.url} />
       </video>
         <IntroLogo />
