@@ -159,7 +159,7 @@ a {
 #infologo svg{
     width: 72vw;
     fill: #000;
-    filter: blur(40px);
+    filter: blur(10px);
 }
 #intrologo.faded {
     opacity: 0;
@@ -224,7 +224,7 @@ a {
 }
 #content .slides .slide {
     position: relative;
-    height: 150vh;
+    height: 200vh;
     width: 100vw;
     margin-bottom: 10vh;
     display: flex;
