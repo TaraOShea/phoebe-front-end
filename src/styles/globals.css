@@ -202,7 +202,7 @@ a {
     right: 0;
     padding: 30px;
     display: block;
-    z-index: 500;
+    z-index: 0;
     text-transform: uppercase;
 }
 .headerflex {
@@ -286,6 +286,7 @@ a {
 #description {
     position: fixed;
     bottom: 30px;
+    z-index: -1;
     width: 100%;
     text-align: center;
     text-transform: uppercase;
