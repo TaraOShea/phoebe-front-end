@@ -92,6 +92,17 @@ html, body {
     font-size: 12px;
 }
 
+.container-slug {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.fade-in {
+  
+    opacity: 1;
+}
+
 a {
     color: #000;
     text-decoration: none;
@@ -222,6 +233,16 @@ a {
     position: relative; 
     display: block;
 }
+
+.page-wrapper {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.is-mounted {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
 #content .slides .slide {
     position: relative;
     height: 200vh;

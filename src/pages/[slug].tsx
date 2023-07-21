@@ -12,6 +12,7 @@ import Logo from "@/components/Logo";
 import Posts from "../components/Postscategory";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
+import React, { useEffect } from 'react';
 import { GetStaticPaths } from 'next';
 // import { GetStaticProps } from 'next';
 import { GetServerSideProps } from "next";
@@ -132,6 +133,52 @@ export default function Home({
   intro: SanityDocument[];
   info: SanityDocument[]; 
 }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    // When the component mounts, add the 'fade-in' class to the page container
+    const pageContainer = document.querySelector('.container-slug');
+    if (pageContainer) {
+      pageContainer.classList.add('fade-in');
+    }
+
+    // When the component unmounts, remove the 'fade-in' class from the page container
+    return () => {
+      if (pageContainer) {
+        pageContainer.classList.remove('fade-in');
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    // Function to handle adding the 'fade-in' class when the route change starts
+    const handleRouteChangeStart = () => {
+      const pageContainer = document.querySelector('.container-slug');
+      if (pageContainer) {
+        pageContainer.classList.remove('fade-in');
+      }
+    };
+
+    // Function to handle adding the 'fade-in' class when the route change is complete
+    const handleRouteChangeComplete = () => {
+      const pageContainer = document.querySelector('.container-slug');
+      if (pageContainer) {
+        pageContainer.classList.add('fade-in');
+      }
+    };
+
+    // Subscribe to the routeChangeStart and routeChangeComplete events
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    // Clean up the event listeners when the component unmounts
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [router.events]);
+
+  
 
   // PreviewSuspense shows while data is being fetched
   // The fetch happens inside PreviewPosts
@@ -141,15 +188,17 @@ export default function Home({
     </PreviewSuspense>
   ) : (
     <>
+     <div className="page-transition">
       <Head>
         <title>Phoebe Lettuce - Creative Director, Consultant and Fashion Stylist.</title>
       </Head>
-    <div className="container">
       <Logo />
       <Header categories={cats} />
       <Intro intro={intro}/>
       <Headeroverlay categories={cats} />
+      <div className="container-slug">
       <Posts posts={posts} />
+      </div>
       <Information info={info}/>
     </div>
     </>

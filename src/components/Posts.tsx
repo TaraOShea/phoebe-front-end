@@ -5,7 +5,7 @@ import Post from './Post';
 export default function Posts({ posts }: { posts: SanityDocument[] }) { 
   return (
     <div id="content">
-      <div className="slides">
+      <div className="slides ">
         {posts.map((post) => (
           <Post 
             key={post._id} 
