@@ -151,12 +151,14 @@ a {
     width: 72vw;
     fill: #000;
 }
-#intrologo svg, #infologo svg{
+#intrologo svg{
     width: 72vw;
     fill: #FFF;  
 }
 
 #infologo svg{
+    width: 72vw;
+    fill: #000;
     filter: blur(40px);
 }
 #intrologo.faded {
