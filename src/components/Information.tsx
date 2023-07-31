@@ -56,7 +56,7 @@ export default function Information({ info }: { info: SanityDocument[] }) {
 <p>Phoebe worked closely with designers Roberta Einer and Susan Fang on their SS23 and FW23 collections,  she has always supported local young designers and artists throughout her career. Her most recent editorial styling work has been featured in The Greatest Magazine and Vogue Portugal.</p> */}
         <div className="info-contact">
          <span>contact</span>
-         <a href="mailto:email@gmail.com">Email@gmail</a>
+         <a href="mailto:studio@phoebeletticethompson.com">studio@phoebeletticethompson.com</a>
         </div>
          </div> 
          <button id="close-info" onClick={handleMouseEvent}>Close</button>
