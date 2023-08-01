@@ -105,7 +105,7 @@ export default function Home({
   ) : (
     <>
       <Head>
-        <title>Phoebe Lettuce - Creative Director, Consultant and Fashion Stylist.</title>
+        <title>Phoebe Lettice Thompson - Creative Director, Consultant and Fashion Stylist.</title>
       </Head>
     <div className="container">
       <Logo />

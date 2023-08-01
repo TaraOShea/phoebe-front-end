@@ -190,7 +190,7 @@ export default function Home({
     <>
      <div className="page-transition">
       <Head>
-        <title>Phoebe Lettuce - Creative Director, Consultant and Fashion Stylist.</title>
+        <title>Phoebe Lettice Thompson - Creative Director, Consultant and Fashion Stylist.</title>
       </Head>
       <Logo />
       <Header categories={cats} />
