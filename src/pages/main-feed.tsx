@@ -5,11 +5,11 @@ import { groq } from "next-sanity";
 import type { SanityDocument } from "@sanity/client";
 import Head from "next/head";
 import { client } from "../lib/sanity.client";
-import Intro from '../components/Intro'
-import Header from '../components/Header'
+import Intro from '../components/Introcategory'
+import Header from '../components/Headercategory'
 import Headeroverlay from '../components/Headeroverlay'
 import Logo from "@/components/Logo";
-import Posts from "../components/Posts";
+import PostsMain from "../components/PostsMain";
 import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
 
@@ -36,8 +36,7 @@ export const getServerSideProps = async ({ preview = false }) => {
 
   var data = await client.fetch(groq`
   {
-    'posts': *[_type == "post" && defined(slug.current) && 
-    'editorial' in post_category[].category_list->slug.current]{
+    'posts': *[_type == "post" && defined(slug.current)]{
       _id,
       title, 
       slug,
@@ -112,11 +111,11 @@ export default function Home({
         <meta property="og:site_name" content="Phoebe Lettice Thompson - Creative Director, Consultant and Fashion Stylist." /> {/* Replace with your website name */}
       </Head>
     <div className="container">
-      <Logo />
+    <Logo />
       <Header categories={cats} />
-      <Headeroverlay categories={cats} />
       <Intro intro={intro}/>
-      <Posts posts={posts} />
+      <Headeroverlay categories={cats} />
+      <PostsMain posts={posts} />
       <Information info={info}/>
     </div>
     </>

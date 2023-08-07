@@ -1,9 +1,11 @@
 import type { SanityDocument } from "@sanity/client";
 import React, { MouseEvent } from 'react';
 import IntroLogo from "@/components/Intrologo";
+import { useRouter } from 'next/router';
+
 
 export default function Intro({ intro }: { intro: SanityDocument[] }) {
-  
+  const router = useRouter();
   const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     document.getElementsByTagName('body')[0].classList.remove("overflow-hidden"); 
@@ -15,6 +17,8 @@ export default function Intro({ intro }: { intro: SanityDocument[] }) {
     document.getElementById("header")?.classList.add('show');
     document.getElementById("description")?.classList.remove("hide");
     document.getElementById("description")?.classList.add('show');
+
+    document.querySelector("a[href='/editorial']")?.closest("li")?.classList.add("active");
     
     setTimeout(() =>{
         // document.getElementById("intro")?.classList.add("hidden");

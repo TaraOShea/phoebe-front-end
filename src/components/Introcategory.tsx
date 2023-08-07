@@ -5,7 +5,6 @@ import IntroLogo from "@/components/Intrologo";
 export default function Intro({ intro }: { intro: SanityDocument[] }) {
   
   if (process.browser) {
-
     document.getElementsByTagName('body')[0].classList.remove("overflow-hidden"); 
     document.getElementById("intrologo")?.classList.add("faded");
     document.getElementById("enterbtn")?.classList.add("hidden");

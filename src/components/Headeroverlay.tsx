@@ -19,7 +19,7 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
  return (
     <div className="headeroverlay">
         <div className="headerflex twix">
-        <Link href="/">Main Feed</Link>
+        <Link href="/main-feed">Main Feed</Link>
           <ul className={currentPath}>
           {categories.map((category) => ( 
              

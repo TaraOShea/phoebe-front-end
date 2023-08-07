@@ -2,6 +2,7 @@ import type { SanityDocument } from "@sanity/client";
 import { PortableText } from "@portabletext/react";
 import React, { MouseEvent, useRef, useEffect } from 'react';
 import Marquee from "react-fast-marquee";
+import { useRouter } from 'next/router';
 
 export default function Information({ info }: { info: SanityDocument[] }) {
    
@@ -16,6 +17,20 @@ export default function Information({ info }: { info: SanityDocument[] }) {
          //  video.current?.pause();
       }, 350);
    }
+   const router = useRouter();
+   const handleMouseEventFeed = (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      document.getElementById("information")?.classList.remove("fadein");
+      document.getElementById("information")?.classList.add("fadeout");
+  
+      setTimeout(() => {
+        document.getElementById("information")?.classList.remove("show");
+        //  video.current?.pause();
+      }, 350);
+  
+      // Navigate to the main root URL
+      router.push('/main-feed');
+    };
 
    React.useEffect(() => {
       if (video.current) {
@@ -59,6 +74,7 @@ export default function Information({ info }: { info: SanityDocument[] }) {
          <a href="mailto:studio@phoebeletticethompson.com">studio@phoebeletticethompson.com</a>
         </div>
          </div> 
+         <button onClick={handleMouseEventFeed} className="mainfeed">Main Feed</button>
          <button id="close-info" onClick={handleMouseEvent}>Close</button>
     </div>
  );
