@@ -18,7 +18,7 @@ export default function Intro({ intro }: { intro: SanityDocument[] }) {
     document.getElementById("description")?.classList.remove("hide");
     document.getElementById("description")?.classList.add('show');
 
-    document.querySelector("a[href='/editorial']")?.closest("li")?.classList.add("active");
+   // document.querySelector("a[href='/editorial']")?.closest("li")?.classList.add("active");
     
     setTimeout(() =>{
         // document.getElementById("intro")?.classList.add("hidden");

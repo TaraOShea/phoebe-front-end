@@ -36,14 +36,14 @@ export const getServerSideProps = async ({ preview = false }) => {
 
   var data = await client.fetch(groq`
   {
-    'posts': *[_type == "post" && defined(slug.current) && 
-    'editorial' in post_category[].category_list->slug.current]{
+    'posts': *[_type == "post" && defined(slug.current)] | order(publishDate desc) {
       _id,
       title, 
       slug,
       images,
       poster,
       description,
+      publishDate,
       'post_category': post_category[]{
         ...,
         category_list->
