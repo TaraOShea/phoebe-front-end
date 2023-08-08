@@ -71,21 +71,22 @@ export const getServerSideProps: GetServerSideProps = async ({ preview = false, 
 
   var data = await client.fetch(groq`
   {
-    'posts': *[_type == "post" && $slug in post_category[].category_list->slug.current]{
-        _id,
-        title,
-        slug,
-        poster,
-        images,
-        description,
-        'post_category': post_category[]{
-          ...,
-          category_list-> {
-            name,
-            id
-          }
-        },
+    'posts': *[_type == "post" && $slug in post_category[].category_list->slug.current] | order(publishDate desc) {
+      _id,
+      title,
+      slug,
+      poster,
+      images,
+      description,
+      publishDate,
+      'post_category': post_category[]{
+        ...,
+        category_list-> {
+          name,
+          id
+        }
       },
+    },
     'categories': *[_type == "category" && defined(slug.current)]{
       _id,
       name, 
@@ -108,7 +109,7 @@ export const getServerSideProps: GetServerSideProps = async ({ preview = false, 
         asset->
       }
     },
-}
+  }
 `, { slug });
 
   var posts = data.posts;

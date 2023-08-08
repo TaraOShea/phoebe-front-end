@@ -14,12 +14,13 @@ import { PreviewSuspense } from "next-sanity/preview";
 import Information from "@/components/Information";
 
 const PreviewPosts = lazy(() => import("../components/PreviewPosts"));
-const query = groq`*[_type == "post" && defined(slug.current)]{
+const query = groq`*[_type == "post" && defined(slug.current)] | order(publishDate desc) {
   _id,
   images,
   title, 
   slug,
   poster,
+  publishDate,
   'post_category': post_category[]{
     ...,
     category_list->
@@ -36,13 +37,14 @@ export const getServerSideProps = async ({ preview = false }) => {
 
   var data = await client.fetch(groq`
   {
-    'posts': *[_type == "post" && defined(slug.current)]{
+    'posts': *[_type == "post" && defined(slug.current)] | order(publishDate desc) {
       _id,
       title, 
       slug,
       images,
       poster,
       description,
+      publishDate,
       'post_category': post_category[]{
         ...,
         category_list->
