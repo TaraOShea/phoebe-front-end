@@ -314,13 +314,13 @@ a {
 }
 
 .m-wrapper {
-    left: -20vw;
+    left: -40vw;
     top: 0;
     pointer-events: none;
     position: fixed;
     background-color: #000;
     display: block !important;
-    transform: rotate(-11deg);
+    transform: rotate(-5deg);
     width: 200vw;
     z-index: 100;
     color: #fff;
