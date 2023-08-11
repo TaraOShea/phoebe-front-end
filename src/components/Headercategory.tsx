@@ -9,7 +9,7 @@ function Header({ categories }: { categories: SanityDocument[] }) {
  return (
    <header id="header">
         <div className="headerflex twice">
-        <Link href="/">Main Feed</Link>
+        <button className="information-hover">Information</button>
           <ul>
           {categories.map((category) => (  
               <li className={currentPath === category.slug.current ? "active" : ""} key={category._id}>
@@ -19,7 +19,7 @@ function Header({ categories }: { categories: SanityDocument[] }) {
               </li>
           ))}
           </ul>
-          <button>Information</button>
+          <Link className="contact-hover" href="mailto:studio@phoebeletticethompson.com">Contact</Link>
         </div>
 
    </header>

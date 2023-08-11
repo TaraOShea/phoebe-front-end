@@ -2,6 +2,7 @@ import type { SanityDocument } from "@sanity/client";
 import { PortableText } from "@portabletext/react";
 import React, { MouseEvent, useRef, useEffect } from 'react';
 import Marquee from "react-fast-marquee";
+import Link from "next/link";
 import { useRouter } from 'next/router';
 
 export default function Information({ info }: { info: SanityDocument[] }) {
@@ -74,7 +75,7 @@ export default function Information({ info }: { info: SanityDocument[] }) {
          <a href="mailto:studio@phoebeletticethompson.com">studio@phoebeletticethompson.com</a>
         </div>
          </div> 
-         <button onClick={handleMouseEventFeed} className="mainfeed">Main Feed</button>
+         <Link className="contact-info" href="mailto:studio@phoebeletticethompson.com">CONTACT</Link>
          <button id="close-info" onClick={handleMouseEvent}>Close</button>
     </div>
  );
