@@ -569,7 +569,8 @@ border-bottom: 1px solid;
     }
     .headerflex ul {
         position: fixed;
-        bottom: 30px;
+        bottom: 10px;
+        line-height: 2;
         left: 0;
         text-align: center;
         width: calc(100%);
