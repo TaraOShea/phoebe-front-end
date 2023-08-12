@@ -400,6 +400,10 @@ a:hover {
     color: #ff00ff !important;
 }
 
+.moving-is-hovered .moving-hover {
+    color: #ff00ff !important;
+}
+
 .runway-is-hovered a[href^="/runway"] {
     color: #ff00ff !important;
 }

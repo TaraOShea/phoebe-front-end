@@ -16,6 +16,9 @@ function Header({ categories }: { categories: SanityDocument[] }) {
                   </Link>
               </li>
           ))}
+          <li>
+          <Link className="moving-hover" href="/">MOVING IMAGE</Link>
+          </li>
           </ul>
           <Link className="contact-hover" href="mailto:studio@phoebeletticethompson.com">contact</Link>
      

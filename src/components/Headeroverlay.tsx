@@ -8,6 +8,7 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
     const currentPath = router.asPath.replace('/', '');
     const [isContactHovered, setIsContactHovered] = useState(false);
     const [isInformationHovered, setIsInformationHovered] = useState(false);
+    const [isMovingHovered, setIsMovingHovered] = useState(false); // Added state for moving hover
     const [hoveredCategorySlug, setHoveredCategorySlug] = useState("");
 
     const handleMouseEvent = (e: MouseEvent<HTMLButtonElement>) => {
@@ -22,6 +23,7 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
     if (typeof document !== 'undefined') {
         document.body.classList.toggle('contact-now-hovered', isContactHovered);
         document.body.classList.toggle('information-is-hovered', isInformationHovered);
+        document.body.classList.toggle('moving-is-hovered', isMovingHovered); // Toggle moving-is-hovered class
     }
 
     useEffect(() => {
@@ -40,7 +42,6 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
             };
         }
     }, [hoveredCategorySlug, isInformationHovered]);
-
 
     return (
         <div className="headeroverlay">
@@ -66,6 +67,16 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
                             </Link>
                         </li>
                     ))}
+                    <li>
+                        <Link
+                            className={`moving-hover ${isMovingHovered ? "moving-is-hovered" : ""}`}
+                            href="/"
+                            onMouseEnter={() => setIsMovingHovered(true)}
+                            onMouseLeave={() => setIsMovingHovered(false)}
+                        >
+                            MOVING IMAGE
+                        </Link>
+                    </li>
                 </ul>
                 <Link
                     className='contact-hover'
