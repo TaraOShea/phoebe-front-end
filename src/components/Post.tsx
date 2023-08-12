@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import type { SanityDocument } from "@sanity/client";
 import Image from "next/image";
+import Next from './Next';
+import Prev from './Prev';
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "../lib/sanity.client";
 import { useInView, InView } from 'react-intersection-observer';
@@ -8,6 +10,8 @@ import { PortableText } from "@portabletext/react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const builder = imageUrlBuilder(client);
+
+
 
 export default function Post({ description, poster, images, title }: { description: string[], poster: SanityDocument[] | SanityDocument, images?: any[], title: any }) {
 
@@ -28,17 +32,15 @@ export default function Post({ description, poster, images, title }: { descripti
     centeredSlides: true,
     spaceBetween: 10,
     loop: false, // Enable infinite loop
-    grabCursor: true, // Show draggable cursor
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+    grabCursor: true // Show draggable cursor
   };
+
+  const totalSlides = (Array.isArray(poster) ? poster.length : 1) + (images?.length || 0);
 
   return (
     <div className="slide" ref={ref}>
       <InView as="div" className="slide-content" onChange={(inView, entry) => handleMouseEvent(inView, description)} data-desc={description}>
-        <Swiper grabCursor loop>
+        <Swiper  loop >
           {Array.isArray(poster) ? (
             poster.map((item, index) => (
               <SwiperSlide key={index}>
@@ -70,6 +72,12 @@ export default function Post({ description, poster, images, title }: { descripti
               />
             </SwiperSlide>
           ))}
+ {totalSlides > 1 && (
+        <>
+          <Prev />
+          <Next />
+        </>
+      )}
         </Swiper>
         <div id="description-mobile">{description}</div>
       </InView>

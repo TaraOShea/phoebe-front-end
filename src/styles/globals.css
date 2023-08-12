@@ -216,6 +216,12 @@ a {
     justify-content: space-between;
 }
 
+.swiper-button-prev, .swiper-button-next {
+    padding: 40px !important;
+    color: #000 !important;
+}
+
+
 .headerflex li {
     display: inline-block;
     padding: 0 10px;
@@ -338,6 +344,8 @@ a {
     height: auto !important;
     align-items: center !important;
 }
+
+
 
 
 #information {
@@ -518,8 +526,12 @@ border-bottom: 1px solid;
 @media only screen and (max-width: 640px) {
     #content .slides .slide {
         height: 100vh;
-        width: 64vw;
-        padding: 15vh 18vw;
+        width: 100%;
+        padding: 15vh 0;
+    }
+
+    #content .slides .slide .slide-content img, #content .slides .slide .slide-content video {
+        max-width: calc(100vw - 13rem);
     }
 
     .info-contact a {
@@ -535,11 +547,21 @@ border-bottom: 1px solid;
     #description {
         display: none;
     }
+
+    .swiper-button-prev, .swiper-button-next {
+        padding: 30px !important;
+    }
+
+    #header {
+        padding: 20px;
+    }
     #description-mobile {
         display: block;
         text-align: center;
         text-transform: uppercase;
         margin-top: 12px;
+        position: absolute;
+        bottom: -4rem;
     }
     .headerflex ul {
         position: fixed;
@@ -579,4 +601,13 @@ border-bottom: 1px solid;
 
 .mainfeedcontent {
     display: block !important;
+}
+
+
+.swiper-button-prev:after, .swiper-button-next:after {
+    display: none !important;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    color: #ff00ff !important;
 }
