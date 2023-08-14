@@ -43,6 +43,16 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
         }
     }, [hoveredCategorySlug, isInformationHovered]);
 
+    const handleMovingLinkClick = () => {
+        setIsMovingHovered(true); // Set the hover state to true before navigation
+        setTimeout(() => {
+            setIsMovingHovered(false); // Reset the hover state after a delay
+        }, 200);
+
+        // You can also use router.push() to navigate programmatically
+        window.location.href = '/';
+    };
+
     return (
         <div className="headeroverlay">
             <div className="headerflex twix">
@@ -68,14 +78,15 @@ function Headeroverlay({ categories }: { categories: SanityDocument[] }) {
                         </li>
                     ))}
                     <li>
-                        <Link
+                    <a
                             className={`moving-hover ${isMovingHovered ? "moving-is-hovered" : ""}`}
-                            href="/"
+                            href="#"
+                            onClick={handleMovingLinkClick}
                             onMouseEnter={() => setIsMovingHovered(true)}
                             onMouseLeave={() => setIsMovingHovered(false)}
                         >
                             MOVING IMAGE
-                        </Link>
+                        </a>
                     </li>
                 </ul>
                 <Link
