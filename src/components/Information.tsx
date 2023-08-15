@@ -57,6 +57,21 @@ export default function Information({ info }: { info: SanityDocument[] }) {
             <span className="normal">FLANNELS</span>
 </Marquee>
 </div>
+<div className="m-wrapper-bottom">
+            <Marquee autoFill direction="left">
+            <span className="serif">Clients include:</span>
+            <span className="bold">ROBERTA</span>
+            <span className="normal">EINER</span>
+            <span className="bold">ADIDAS</span>
+            <span className="normal">BYREDO</span>
+            <span className="bold">BROWNS</span>
+            <span className="normal">FARFETCH</span>
+            <span className="bold">ELLESSE</span>
+            <span className="normal">ED HARDY</span>
+            <span className="bold">MERCEDES</span>
+            <span className="normal">FLANNELS</span>
+</Marquee>
+</div>
 
          <video id="info-video" ref={video} autoPlay playsInline loop muted style={{ width: '100vw', height: '100vh', position: 'absolute', top: '0', right: '0', objectFit: 'cover' }}>
             <source src={info[0].video.asset.url} />
