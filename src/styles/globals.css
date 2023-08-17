@@ -404,35 +404,35 @@ a {
 }
 
 a:hover {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 .contact-now-hovered .contact-hover {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 .information-is-hovered .information-hover {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 .moving-is-hovered .moving-hover {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 .runway-is-hovered a[href^="/runway"] {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 .editorial-is-hovered a[href^="/editorial"] {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 .advertising-is-hovered a[href^="/advertising"]  {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 .music-celebrity-is-hovered a[href^="/music-celebrity"] {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
 
 #close-info {
@@ -465,7 +465,7 @@ a:hover {
 }
 
 #close-info:hover {
-    color: #ff00ff;
+    color: #ffc6ec;
 }
 
 .info-contact {
@@ -550,7 +550,7 @@ border-bottom: 1px solid;
     }
 
     #content .slides .slide .slide-content img, #content .slides .slide .slide-content video {
-        max-width: calc(100vw - 13rem);
+        max-width: calc(100vw - 9rem);
     }
 
     .info-contact a {
@@ -568,11 +568,11 @@ border-bottom: 1px solid;
     }
 
     .swiper-button-prev, .swiper-button-next {
-        padding: 30px !important;
+        padding: 16px !important;
     }
 
     #header {
-        padding: 20px;
+        padding: 10px;
     }
     #description-mobile {
         display: block;
@@ -585,23 +585,23 @@ border-bottom: 1px solid;
     .headerflex ul {
         position: fixed;
         bottom: 10px;
-        line-height: 2;
+        line-height: 1.5;
         left: 0;
         text-align: center;
         width: calc(100%);
     }
     .headerflex li {
-        padding: 0 6px;
+        padding: 0 9px;
     }
 
     #close-info {
-        left: 20px;
-        padding-top: 20px;
+        left: 10px;
+        padding-top: 10px;
     }
 
     .contact-info {
-        top: 20px;
-        right: 20px;
+        top: 10px;
+        right: 10px;
     }
 
     .m-wrapper {
@@ -646,5 +646,5 @@ border-bottom: 1px solid;
 }
 
 .swiper-button-prev:hover, .swiper-button-next:hover {
-    color: #ff00ff !important;
+    color: #ffc6ec !important;
 }
