@@ -107,7 +107,7 @@ export default function Home({
     <>
       <Head>
         <title>Phoebe Lettice Thompson - Creative Director, Consultant and Fashion Stylist.</title>
-        <meta property="og:image" content="/imgs/COVER.png" /> {/* Replace with your actual image filename */}
+        <meta property="og:image" content="/imgs/COVER2.png" /> {/* Replace with your actual image filename */}
         <meta property="og:url" content="https://www.phoebeletticethompson.com/" /> {/* Replace with the URL of your website */}
         <meta property="og:site_name" content="Phoebe Lettice Thompson  – Stylist" /> {/* Replace with your website name */}
       </Head>
