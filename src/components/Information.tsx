@@ -45,31 +45,47 @@ export default function Information({ info }: { info: SanityDocument[] }) {
       <div className="m-wrapper">
             <Marquee autoFill direction="right">
             <span className="serif">Clients include:</span>
-            <span className="bold">ROBERTA</span>
-            <span className="normal">EINER</span>
             <span className="bold">ADIDAS</span>
             <span className="normal">BYREDO</span>
-            <span className="bold">BROWNS</span>
-            <span className="normal">FARFETCH</span>
-            <span className="bold">ELLESSE</span>
-            <span className="normal">ED HARDY</span>
             <span className="bold">MERCEDES</span>
-            <span className="normal">FLANNELS</span>
+            <span className="normal">JAGUAR</span>
+            <span className="bold">PUMA</span>
+            <span className="normal">SAMSUNG</span>
+            <span className="bold">BROWNS FASHION</span>
+            <span className="normal">FARFETCH</span>
+            <span className="bold">FLANNELS</span>
+            <span className="normal">KOIBIRD</span>
+            <span className="bold">VFILES</span>
+            <span className="normal">ELLESSE</span>
+            <span className="bold">ED HARDY</span>
+            <span className="normal">SELFRIDGES</span>
+            <span className="bold">ROBERTA EINER</span>
+            <span className="normal">SUSAN FANG</span>
+            <span className="bold">NYX MAKE UP</span>
+            <span className="normal">NIKE</span>
 </Marquee>
 </div>
 <div className="m-wrapper-bottom">
             <Marquee autoFill direction="left">
             <span className="serif">Clients include:</span>
-            <span className="bold">ROBERTA</span>
-            <span className="normal">EINER</span>
             <span className="bold">ADIDAS</span>
             <span className="normal">BYREDO</span>
-            <span className="bold">BROWNS</span>
-            <span className="normal">FARFETCH</span>
-            <span className="bold">ELLESSE</span>
-            <span className="normal">ED HARDY</span>
             <span className="bold">MERCEDES</span>
-            <span className="normal">FLANNELS</span>
+            <span className="normal">JAGUAR</span>
+            <span className="bold">PUMA</span>
+            <span className="normal">SAMSUNG</span>
+            <span className="bold">BROWNS FASHION</span>
+            <span className="normal">FARFETCH</span>
+            <span className="bold">FLANNELS</span>
+            <span className="normal">KOIBIRD</span>
+            <span className="bold">VFILES</span>
+            <span className="normal">ELLESSE</span>
+            <span className="bold">ED HARDY</span>
+            <span className="normal">SELFRIDGES</span>
+            <span className="bold">ROBERTA EINER</span>
+            <span className="normal">SUSAN FANG</span>
+            <span className="bold">NYX MAKE UP</span>
+            <span className="normal">NIKE</span>
 </Marquee>
 </div>
 
