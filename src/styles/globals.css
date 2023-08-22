@@ -558,6 +558,8 @@ border-bottom: 1px solid;
 
     #content .slides .slide .slide-content img, #content .slides .slide .slide-content video {
         max-width: calc(100vw - 9rem);
+        max-height: 73vh !important;
+        height: auto;
     }
 
     .info-contact a {
