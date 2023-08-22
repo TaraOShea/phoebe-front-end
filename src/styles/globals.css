@@ -286,9 +286,11 @@ a {
 #content .slides .slide .slide-content img, 
 #content .slides .slide .slide-content video {
     display: block;
+    object-fit: contain;
     height: auto;
     margin: 0 auto;
-    max-height: 73vh;
+   /* max-height: 73vh;*/
+   height: 73vh;
     max-width: 100%;
     width: auto;
 }
