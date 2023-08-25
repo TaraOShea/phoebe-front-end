@@ -270,6 +270,10 @@ a {
     height: 100vh;
 }
 
+.swiper-slide {
+    width: 100vw !important;
+}
+
 
 #content .slides .slide:last-child {
     margin-bottom: 0vh;
@@ -289,6 +293,7 @@ a {
     object-fit: contain;
     height: auto;
     margin: 0 auto;
+    max-width: none !important;
    /* max-height: 73vh;*/
    height: 73vh;
     max-width: 100%;
@@ -557,7 +562,7 @@ border-bottom: 1px solid;
     }
 
     #content .slides .slide .slide-content img, #content .slides .slide .slide-content video {
-        max-width: calc(100vw - 9rem);
+        max-width: calc(100vw - 9rem) !important;
         max-height: 73vh !important;
         height: auto;
     }
