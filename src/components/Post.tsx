@@ -18,6 +18,13 @@ export default function Post({ description, poster, images, title }: { descripti
   const { ref, inView, entry } = useInView({
     threshold: 0.4,
   });
+  
+
+  const { ref: secondRef, inView: secondInView } = useInView({
+    threshold: 1,
+    rootMargin: '1% 0px 1% 0px', // Adjust the rootMargin to determine when to trigger "is-pinned"
+
+  });
 
   const handleMouseEvent = (inView: any, description: any) => {
     let myContainer = document.getElementById('description') as HTMLInputElement;
@@ -39,7 +46,8 @@ export default function Post({ description, poster, images, title }: { descripti
 
   return (
     <div className="slide" ref={ref}>
-      <InView as="div" className="slide-content" onChange={(inView, entry) => handleMouseEvent(inView, description)} data-desc={description}>
+      <div ref={secondRef} className={`slide-content ${secondInView ? 'is-pinned' : ''}`}>
+      <InView as="div" className="slide-content slide-content-mobile" onChange={(inView, entry) => handleMouseEvent(inView, description)} data-desc={description}>
         <Swiper  loop >
           {Array.isArray(poster) ? (
             poster.map((item, index) => (
@@ -81,6 +89,7 @@ export default function Post({ description, poster, images, title }: { descripti
         </Swiper>
         <div id="description-mobile">{description}</div>
       </InView>
+      </div>
     </div>
   );
 }
