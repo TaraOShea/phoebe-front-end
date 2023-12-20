@@ -34,9 +34,10 @@ export const getServerSideProps = async ({ preview = false }) => {
 
   // const data = await client.fetch(query);
 
+  
   var data = await client.fetch(groq`
   {
-    'posts': *[_type == "post" && defined(slug.current)] | order(publishDate desc) {
+    'posts': *[_type == "post" &&  'runway' in post_category[].category_list->slug.current] | order(publishDate desc) {
       _id,
       title, 
       slug,
