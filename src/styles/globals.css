@@ -593,6 +593,10 @@ border-bottom: 1px solid;
         display: none;
     }
 
+    .swiper {
+        width: 100vw !important;
+    }
+
     .swiper-button-prev, .swiper-button-next {
         padding: 16px !important;
     }
