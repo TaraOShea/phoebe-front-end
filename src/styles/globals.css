@@ -555,6 +555,10 @@ border-bottom: 1px solid;
     color: #fff;
 }
 
+.swiper {
+    width: 100vw !important;
+}
+
 @media only screen and (max-width: 640px) {
     #content .slides .slide {
         height: 100vh;
@@ -593,9 +597,7 @@ border-bottom: 1px solid;
         display: none;
     }
 
-    .swiper {
-        width: 100vw !important;
-    }
+ 
 
     .swiper-button-prev, .swiper-button-next {
         padding: 16px !important;
